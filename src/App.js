@@ -1,11 +1,13 @@
+import { Routes, Route } from 'react-router-dom';
+
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Bunner from './components/Bunner/Bunner';
-import Home from './components/Home/Home';
-import Catalog from './components/Catalog/Catalog';
-import About from './components/About/About';
-import Contacts from './components/Contacts/Contacts';
-import NotFound from './components/NotFound/NotFound';
+import Home from './pages/Home/Home';
+import Catalog from './pages/Catalog/Catalog';
+import About from './pages/About/About';
+import Contacts from './pages/Contacts/Contacts';
+import NotFound from './pages/NotFound/NotFound';
 
 function App() {
   return (
@@ -15,11 +17,13 @@ function App() {
         <div className="row">
           <div className="col">
             <Bunner />
-            {/* <Home /> */}
-            <Catalog />
-            {/* <About /> */}
-            {/* <Contacts /> */}
-            {/* <NotFound /> */}
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/catalog" element={<Catalog />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contacts" element={<Contacts />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
           </div>
         </div>
       </main>

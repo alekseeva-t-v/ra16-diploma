@@ -4,8 +4,8 @@ import CatalogCategories from './CatalogCategories';
 
 const Catalog = () => {
   return (
-    <section class={styles['catalog']}>
-      <h2 class="text-center">Каталог</h2>
+    <section className={styles['catalog']}>
+      <h2 className="text-center">Каталог</h2>
       <CatalogSearch />
       <CatalogCategories />
     </section>

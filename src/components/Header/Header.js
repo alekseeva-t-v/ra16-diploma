@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import HeaderNavbar from './HeaderNavbar';
 import HeaderControls from './HeaderControls';
 
@@ -10,9 +12,9 @@ const Header = () => {
         <div className="row">
           <div className="col">
             <nav className="navbar navbar-expand-sm navbar-light bg-light">
-              <a className="navbar-brand" href="/">
+              <Link className="navbar-brand" to="/">
                 <img src="./assets/img/header-logo.png" alt="Bosa Noga" />
-              </a>
+              </Link>
               <div className="collapse navbar-collapse" id="navbarMain">
                 <HeaderNavbar />
                 <HeaderControls />

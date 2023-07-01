@@ -15,7 +15,7 @@ const FooterContacts = () => {
       </a>
       <div className={styles['footer-social-links']}>
         <div className={`${styles['footer-social-link']} ${styles['footer-social-link-twitter']}`}></div>
-        <div class={`${styles['footer-social-link']} ${styles['footer-social-link-vk']}`}></div>
+        <div className={`${styles['footer-social-link']} ${styles['footer-social-link-vk']}`}></div>
       </div>
     </section>
   );
