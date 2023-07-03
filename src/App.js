@@ -1,33 +1,26 @@
 import { Routes, Route } from 'react-router-dom';
 
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
-import Bunner from './components/Bunner/Bunner';
 import Home from './pages/Home/Home';
 import Catalog from './pages/Catalog/Catalog';
 import About from './pages/About/About';
 import Contacts from './pages/Contacts/Contacts';
 import NotFound from './pages/NotFound/NotFound';
+import Product from './pages/Product/Product';
+import Layout from './components/Layout/Layout';
 
 function App() {
   return (
     <>
-      <Header />
-      <main className="container">
-        <div className="row">
-          <div className="col">
-            <Bunner />
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/catalog" element={<Catalog />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/contacts" element={<Contacts />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </div>
-        </div>
-      </main>
-      <Footer />
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="catalog.html" element={<Catalog />} />
+          <Route path="about.html" element={<About />} />
+          <Route path="contacts.html" element={<Contacts />} />
+          <Route path="catalog/:id.html" element={<Product />} />
+          <Route path="*" element={<NotFound />} />
+        </Route>
+      </Routes>
     </>
   );
 }

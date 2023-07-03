@@ -8,14 +8,17 @@ body {
 
 body {
   margin: 0;
-  font-family: 'Roboto', sans-serif;;
+  font-family: 'Roboto', sans-serif;
 }
 
 a {
   color: #727e86;
 }
 
-a, a:hover, a:visited, a:active {
+a,
+a:hover,
+a:visited,
+a:active {
   text-decoration: none;
 }
 
@@ -47,6 +50,7 @@ section {
 }
 
 .nav-link {
+  font-size: 18px;
   color: #727e86;
   transition: all 0.3s;
 }
@@ -56,10 +60,27 @@ section {
 }
 
 .nav-link.active {
-  color: #ff0000;
+  color: #ff7c7e;
+  font-weight: 700;
 }
 
-h2, .h2 {
+.container .nav-link.active {
+  color: #ff7c7e;
+}
+
+.categories .nav-link {
+  margin-left: 10px;
+  border: solid 2px #727e86;
+  border-radius: 20px;
+}
+
+.categories .nav-link.active {
+  background-color: #727e86;
+  color: #ffffff;
+}
+
+h2,
+.h2 {
   margin-bottom: 1.5em;
   margin-top: 2em;
 }

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const FooterInfo = () => {
   return (
@@ -6,19 +6,19 @@ const FooterInfo = () => {
       <h5>Информация</h5>
       <ul className="nav flex-column">
         <li className="nav-item">
-          <Link className="nav-link" to="/about">
+          <NavLink className="nav-link" to="/about.html">
             О магазине
-          </Link>
+          </NavLink>
         </li>
         <li className="nav-item">
-          <Link className="nav-link" to="/catalog">
+          <NavLink className="nav-link" to="/catalog.html">
             Каталог
-          </Link>
+          </NavLink>
         </li>
         <li className="nav-item">
-          <Link className="nav-link" to="/contacts">
+          <NavLink className="nav-link" to="/contacts.html">
             Контакты
-          </Link>
+          </NavLink>
         </li>
       </ul>
     </section>

@@ -2,7 +2,7 @@ import styles from './Catalog.module.css'
 
 const CatalogCategories = () => {
   return (
-    <ul className={`${styles['catalog-categories']} nav justify-content-center`}>
+    <ul className={`${styles['catalog-categories']} nav justify-content-center categories`}>
         <li className="nav-item">
           <a className="nav-link active" href="!#">
             Все

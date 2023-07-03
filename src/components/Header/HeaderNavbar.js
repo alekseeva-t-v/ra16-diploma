@@ -1,30 +1,31 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const HeaderNavbar = () => {
   return (
     <ul className="navbar-nav mr-auto">
-      <li className="nav-item active">
-        <Link className="nav-link" to="/">
+      <li className="nav-item">
+        <NavLink className="nav-link" to="/">
           Главная
-        </Link>
+        </NavLink>
       </li>
       <li className="nav-item">
-        <Link className="nav-link" to="/catalog">
+        <NavLink className="nav-link" to="/catalog.html">
           Каталог
-        </Link>
+        </NavLink>
       </li>
       <li className="nav-item">
-        <Link className="nav-link" to="/about">
+        <NavLink className="nav-link" to="/about.html">
           О магазине
-        </Link>
+        </NavLink>
       </li>
       <li className="nav-item">
-        <Link className="nav-link" to="/contacts">
+        <NavLink className="nav-link" to="/contacts.html">
           Контакты
-        </Link>
+        </NavLink>
       </li>
     </ul>
   );
 };
+
 
 export default HeaderNavbar;

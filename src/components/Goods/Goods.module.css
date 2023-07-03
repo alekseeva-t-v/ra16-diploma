@@ -1,0 +1,15 @@
+.goods__wrapper {
+  display: flex;
+  align-items: stretch;
+}
+
+.goods__card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.goods__card-body btn {
+  transition: all 0.3s;
+}

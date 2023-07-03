@@ -1,8 +1,9 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 import HeaderNavbar from './HeaderNavbar';
 import HeaderControls from './HeaderControls';
 
+import logo from './header-logo.png'
 import styles from './Header.module.css';
 
 const Header = () => {
@@ -13,7 +14,7 @@ const Header = () => {
           <div className="col">
             <nav className="navbar navbar-expand-sm navbar-light bg-light">
               <Link className="navbar-brand" to="/">
-                <img src="./assets/img/header-logo.png" alt="Bosa Noga" />
+                <img src={logo} alt="Bosa Noga" />
               </Link>
               <div className="collapse navbar-collapse" id="navbarMain">
                 <HeaderNavbar />
