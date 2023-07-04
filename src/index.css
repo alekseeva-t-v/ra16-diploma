@@ -70,8 +70,9 @@ section {
 
 .categories .nav-link {
   margin-left: 10px;
-  border: solid 2px #727e86;
-  border-radius: 20px;
+  font-size: 16px;
+  border: solid 1px #727e86;
+  border-radius: 7px;
 }
 
 .categories .nav-link.active {

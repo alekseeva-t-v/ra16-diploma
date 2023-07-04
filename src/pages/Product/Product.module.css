@@ -1,3 +1,14 @@
+.product__wrapper {
+  display: flex;
+  align-items: stretch;
+}
+
+.product__content {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+}
+
 .product__btn {
   display: block;
   width: 100%;

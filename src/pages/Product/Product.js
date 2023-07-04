@@ -1,6 +1,8 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
+import Preloader from '../../components/Preloader/Preloader';
+
 import styles from './Product.module.css'
 
 const Product = () => {
@@ -15,11 +17,11 @@ const Product = () => {
 
   return (
     <section className="catalog-item">
-      {!product && <p>Загрузка данных</p>}
+      {!product && <Preloader />}
       {product && (
         <>
           <h2 className="text-center">{product.title}</h2>
-          <div className="row">
+          <div className={`${styles['product__wrapper']} row`}>
             <div className="col-5">
               <img
                 className="img-fluid"
@@ -27,7 +29,7 @@ const Product = () => {
                 alt={product.title}
               />
             </div>
-            <div className="col-7">
+            <div className={`${styles['product__content']} col-7`}>
               <table className="table table-bordered">
                 <tbody>
                   <tr>

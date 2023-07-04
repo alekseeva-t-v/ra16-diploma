@@ -4,7 +4,7 @@ import styles from './Goods.module.css'
 
 const GoodsListItem = (props) => {
   return (
-    <div className={`${styles['goods__wrapper']} col-4`}>
+    <div className={`${styles['goods__item-wrapper']} col-4`}>
       <div className={`${styles['goods__card']} card catalog-item-card`}>
         <img
           className="card-img-top img-fluid"

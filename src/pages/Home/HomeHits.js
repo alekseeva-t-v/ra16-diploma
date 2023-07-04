@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 
 import GoodsList from '../../components/Goods/GoodsList';
+import Preloader from '../../components/Preloader/Preloader';
 
 const HomeHits = () => {
   const [hits, setHits] = useState([]);
@@ -30,13 +31,14 @@ const HomeHits = () => {
     fetchHitsHandler();
   }, [fetchHitsHandler]);
 
-  let content = <GoodsList hits={hits} />;
+  let content = <GoodsList goods={hits} />;
 
   if (error) {
     content = <p>{error}</p>;
   }
+
   if (isLoading) {
-    content = <p>Загрузка товаров...</p>;
+    content = <Preloader />;
   }
 
   return (

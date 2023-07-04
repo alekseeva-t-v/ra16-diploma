@@ -1,9 +1,11 @@
 import GoodsListItem from "./GoodsListItem";
 
-const GoodsList = (props) => {
-  const { hits } = props;
+import styles from './Goods.module.css'
 
-  const elements = hits.map((item) => {
+const GoodsList = (props) => {
+  const { goods } = props;
+
+  const elements = goods.map((item) => {
     return (
       <GoodsListItem
         key={item.id}
@@ -15,7 +17,7 @@ const GoodsList = (props) => {
     );
   });
 
-  return <div className="row">{elements}</div>;
+  return <div className={`${styles['goods__wrapper']} row`}>{elements}</div>;
 };
 
 export default GoodsList;
