@@ -1,70 +1,121 @@
-# Getting Started with Create React App
+# Дипломный проект курса «React»
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Дипломный проект курса [React для JS-разработчиков](https://netology.ru/programs/react)
 
-## Available Scripts
+## **Задача и описание реализации**
 
-In the project directory, you can run:
+Дипломный проект представляет собой интернет-магазин обуви. Задача заключается в создании работающего приложения, всеми основными функциями которого можно пользоваться.
 
-### `npm start`
+## **Содержание**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Приложение содержит следующие самостоятельные экраны (страницы):
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* Главная страница.
+* Каталог товаров.
+* Информационная страница.
+* Страница товара.
+* Корзина.
+* 404
 
-### `npm test`
+## **Переходы между экранами**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Навигационным центром приложения являются шапка и футер каждого экрана (страницы):
 
-### `npm run build`
+![header](./public/images/header.jpg)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![footer](./public/images/footer.jpg)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Из шапки можно попасть на следующие экраны:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* ***логотип*** и ***ссылка «Главная»*** — ведут на главную страницу, URL — "/";
+* ***«Kаталог»*** — ведёт на страницу каталога, URL — "/catalog.html";
+* ***«О магазине»*** — ведёт на страницу «О магазине», URL — "/about.html";
+* ***«Контакты»*** — ведёт на страницу «Контакты», URL — "/contacts.html".
 
-### `npm run eject`
+Из футера можно попасть на следующие экраны:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+* ***«О магазине»*** — ведёт на страницу «О магазине», URL — "/about.html";
+* ***«Kаталог»*** — ведёт на страницу каталога, URL — "/catalog.html";
+* ***«Контакты»*** — ведёт на страницу «Контакты», URL — "/contacts.html".
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## **Описание экранов**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### **Главная страница**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Экран «Главная страница» доступен по умолчанию при открытии приложения.
 
-## Learn More
+После загрузки страница выглядит следующим образом:
+![home](./public/images/home.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### **Каталог товаров**
+Экран «Каталог товаров» выглядит следующим образом:
+![catalog](./public/images/catalog.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Фактически он полностью повторяет функциональность каталога на главной странице, за одним исключением: у него есть поле поиска.
 
-### Code Splitting
+Если категория меняется, то данные перезагружаются с учётом строки поиска.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Строка поиска реагирует только на полный ввод, не live-поиск.
 
-### Analyzing the Bundle Size
+### **Поиск**
+На всех страницах в шапке присутствует виджет поиска:
+![search](./public/images/search-comments.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+По умолчанию поисковое поле скрыто, отображается только иконка.
+Эта иконка работает следующим образом: при первом клике открывает строку поиска, при втором, если был введён какой-то текст, то перенаправляет пользователя на страницу каталога (/catalog.html), при этом в поисковом поле должен быть отображён тот же текст, что был ввёден в строку поиска в шапке, и загрузка данных должна происходить исходя из этого:
 
-### Making a Progressive Web App
+![search](./public/images/search-catalog-comments.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Поиск на сервере работает по точному совпадению цвета без учёта регистра, например, «чёрный», и по содержанию слова для названия без учёта регистра, например, можно найти «жар» в «Туфли Жар-птицы».
 
-### Advanced Configuration
+Если пользователь не ввёл никакой текст, то строка поиска просто схлопывается обратно, как сейчас реализовано в html.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### **О магазине, контакты**
+Это просто контентные страницы, в которые жёстко зашит контент. Никакой логики, кроме работы виджета поиска и ссылок, там нет.
 
-### Deployment
+![about](./public/images/about.jpg)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+![contact](./public/images/contact.jpg)
 
-### `npm run build` fails to minify
+### **Страница товара**
+Страница товара выглядит следующим образом:
+![catalog](./public/images/catalog-item.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### **Страница корзины**
+В корзину можно попасть, либо заказав что-то, либо кликнув на иконку корзины в шапке сайта.
+
+Корзина выглядит следующим образом:
+![cart](./public/images/cart.jpg)
+
+Блок «Корзина» отображает товары, находящиеся в корзине. Все товары хранятся локально в localStorage. Товар можно удалить из корзины, тогда он удалится и из localStorage тоже.
+
+Одной позицией считается пара — товар + размер. То есть если купить те же босоножки другого размера, то это будет две позиции в корзине. А если два раза купить босоножки того же размера, то изменится количество и общая стоимость, но запись останется в табличке одна.
+
+Общая сумма рассчитывается на базе суммирования всех позиций при отображении.
+
+Соответственно, виджет корзинки отображает количество позиций в корзине:
+
+![cart](./public/images/cart-icon.jpg)
+
+Если в корзине товаров нет вообще, то розового индикатора с числом тоже нет.
+
+После успешного оформления заказа все данные корзины вычищаются из state и из localStorage.
+
+Пользователю отображается loader и сообщение об успехе.
+
+### **404**
+При вводе несуществующего URL, не соответствующего ни одному из путей, пользователю показывается страница 404.html.
+
+![404](./public/images/404.jpg)
+
+## **Стек технологий**
+
+![HTML](./public/images/html.svg)
+![CSS](./public/images/css.svg)
+![JS](./public/images/js.svg)
+![REACT](./public/images/react.svg)
+![REDUX](./public/images/redux.svg)
+![GIT](./public/images/git.svg)
+
+## [**Демо**](https://ra16-diploma.vercel.app/)
+![demo](./public/images/demo.jpg)
