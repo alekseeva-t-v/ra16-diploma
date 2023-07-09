@@ -99,3 +99,18 @@ h2,
 .top-sales {
   min-height: 300px;
 }
+
+.info {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 18px;
+  font-style: italic;
+}
+
+.info-img {
+  display: block;
+  /* width: 400px; */
+  height: 350px;
+  margin: 20px auto 0;
+}

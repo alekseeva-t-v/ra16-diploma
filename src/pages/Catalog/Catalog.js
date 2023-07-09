@@ -1,7 +1,7 @@
 import styles from './Catalog.module.css';
 import CatalogSearch from './CatalogSearch';
-import Categories from '../../components/Categories/Categories';
-import CatalogList from '../../components/CatalogList/CatalogList';
+import Categories from './Categories';
+import CatalogList from './CatalogList';
 
 const Catalog = () => {
   return (

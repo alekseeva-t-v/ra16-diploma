@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 
-import GoodsList from '../../components/Goods/GoodsList';
+import GoodsList from '../Catalog/Goods/GoodsList';
 import Preloader from '../../components/Preloader/Preloader';
 
 const HomeHits = () => {

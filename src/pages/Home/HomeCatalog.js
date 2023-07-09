@@ -1,5 +1,5 @@
-import Categories from '../../components/Categories/Categories';
-import CatalogList from '../../components/CatalogList/CatalogList';
+import Categories from '../Catalog/Categories';
+import CatalogList from '../Catalog/CatalogList';
 
 import styles from './Home.module.css';
 
